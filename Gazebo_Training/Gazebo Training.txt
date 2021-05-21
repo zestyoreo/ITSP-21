@@ -1,0 +1,11 @@
+Gazebo Training
+
+1. I followed the videos from The Construct to create an Arm Robot.
+
+
+
+2. I followed Moore Robots Tutorial to make a 2 wheeled (then tried to make it into a 4 wheeled) bot with a camera.
+
+Temporary link:
+https://app.theconstructsim.com/#/l/3fd4ac22/
+Expires at 2021-05-25 14:32
