@@ -1,6 +1,6 @@
 Gazebo Training
 
-1. I followed the videos from The Construct to create an Arm Robot.
+1. I followed the videos from The Construct to create an Arm Robot. I used the online ROS Develeopment Studio developed by the Construct and created the simulation on ROS Kinetic (the distro used)
 
 
 
