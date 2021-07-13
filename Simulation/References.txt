@@ -1,0 +1,18 @@
+References
+
+Most Important
+https://maker.pro/ros/tutorial/robotic-arm-simulation-in-robot-operating-system-ros
+https://github.com/kumar-akshay324/robot_arm_simulator/blob/master/src/joint_state_publisher_node.py
+https://maker.pro/arduino/tutorial/how-to-control-a-robot-arm-with-ros-and-arduino
+https://github.com/kumar-akshay324/robot-arm-control-ros
+
+Important
+https://www.youtube.com/watch?v=Ale55LcdZeE&list=PLK0b4e05LnzYpDnNeWJcQLju7JfJFX-lk&index=2&ab_channel=TheConstruct
+https://bitbucket.org/theconstructcore/my-robotic-manipulator/src/master/
+https://www.theconstructsim.com/ros-projects-robotic-manipulator-part-1-basic-urdf-rviz/
+https://www.youtube.com/watch?v=BGV6DI_PItA&ab_channel=TheConstruct
+https://www.theconstructsim.com/ros-qa-158-publish-one-message-topic/
+
+Others
+https://www.theconstructsim.com/ros-qa-149-how-to-command-joint-position-of-a-robot-in-ros-using-python/
+https://github.com/qboticslabs/ros_install_noetic
