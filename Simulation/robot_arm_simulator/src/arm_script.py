@@ -10,20 +10,19 @@ class Arm_Control:
 
 	def __init__(self):
 		self.joint_positions = []
-		self.num_interpolations = 100
 		self.target_joint_positions = []
 		self.position_steps = []
 		self.joint_names = []
 		self.typ = 0
 		self.prev_state = [0,0,0,0,0,0,0,0,0,0]
-		self.plate_positions = [[0,0,0,0,0,0,-1.56,0,0,0],[0,0,0,0,0,0,-1.56,0,-0.54,0.54],[0,0,0,0,0,0,-1.56,0,0,0]]
-		#[["""position 1 of all 10 joints*"""]["""position 2 of all 10 joints*"""]["""position 3 of all 10 joints*"""]["""position 4 of all 10 joints*"""]] 
-		self.plate_delays = [3,3,2]	#delay in seconds in each positions
 
-		self.bowl_positions = [["""position 1 of all 10 joints*"""],["""position 2 of all 10 joints*"""],["""position 3 of all 10 joints*"""],["""position 4 of all 10 joints*"""]] 
+		self.plate_positions = [[0,0,0,0,0,0,0,0,-0.54,0.54],[0,0,0,0,0,0,-1.56,0,-0.54,0.54],[0,0,0,0,0,0,-1.56,0,0,0],[0,0.27,1.05,1.21,0,0,-1.56,0,0,0],[0,0.27,1.05,1.21,0,0,-1.56,-0.21,0,0],[0,0.93,0.48,1.57,0,0,-1.56,-0.21,0,0],[0,0.93,0.48,1.57,1.57,0,-1.56,-0.21,0,0],[0,0.93,0.48,1.57,-1.57,0,-1.56,-0.21,0,0],[0,0,0.48,1.57,0,0,-1.56,-0.21,0,0],[0,0,0.48,1.57,0,0,-1.56,1.57,0,0],[0,0.87,0.57,1.57,0,0,-1.56,1.57,0,0],[0,0.87,0.57,1.57,1.57,0,-1.56,1.57,0,0],[0,0,0,0,0,0,0,0,-0.54,0.54],[0,0,0,0,0,0,-1.56,0,-0.54,0.54]]
+		self.plate_delays = [2,2,2,1,1,1,1,1,3,1,1,1,1,1]	#delay in seconds in each positions
+
+		self.bowl_positions = [[0,0.27,1.05,1.21,0,0,-1.56,-0.21,0,0],[0,0.93,0.48,1.57,0,0,-1.56,-0.21,0,0],[0,0.93,0.48,1.57,1.57,0,-1.56,-0.21,0,0]] 
 		self.bowl_delays = [1,1,2]
 
-		self.glass_positions = [["""position 1 of all 10 joints*"""],["""position 2 of all 10 joints*"""],["""position 3 of all 10 joints*"""],["""position 4 of all 10 joints*"""]] 
+		self.glass_positions = [[0,0.27,1.05,1.21,0,0,-1.56,-0.21,0,0],[0,0.93,0.48,1.57,0,0,-1.56,-0.21,0,0],[0,0.93,0.48,1.57,1.57,0,-1.56,-0.21,0,0]] 
 		self.glass_delays = [1,1,2]
 
 		# Create ROS publisher
@@ -47,13 +46,10 @@ class Arm_Control:
 		self.robot_arm_joint_state.velocity = []
 		self.robot_arm_joint_state.effort = []
 
-		# Iitialise current step to 0
-		self.current_interpolation = 0
-
 		# Get type of utensil and execute sequence of movements accordingly
 
 		if self.typ == 0:
-			print("Stationery")
+			#print("Stationery")
 			self.robot_arm_joint_state.header.stamp = rospy.Time.now()
 			self.robot_arm_joint_state.position = self.prev_state
 			self.data_publisher.publish(self.robot_arm_joint_state)
